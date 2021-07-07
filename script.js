@@ -45,3 +45,20 @@ console.log('La somma totale è ' + wSum)
 stampa = document.getElementById('numbers-list')
 stampa.innerHTML = '<li> La somma totale dei numeri inseriti è ' + sum + '.</li>'
     + '<li> La somma totale dei numeri inseriti nel ciclo while è ' + wSum + '.</li>';
+
+
+/* SNACK 2: Chiedi un numero all'utente, se è pari stampa il numero,
+se è dispari stampa il numero successivo. */
+
+var userNumber = parseInt(prompt('Digita un numero'));
+
+var ristampa;
+
+if ((userNumber % 2) == 0) {
+    ristampa = document.getElementById('numbers-list')
+    ristampa.innerHTML = '<li> Il numero che hai inserito è "' + userNumber + '" ed è pari.</li>';
+} else {
+    var userNextNumber = userNumber + 1;
+    ristampa = document.getElementById('numbers-list')
+    ristampa.innerHTML = '<li> Il numero che hai inserito è "' + userNumber + '" ed è dispari, perciò è stato portato al numero pari successivo che è: ' + userNextNumber + '.</li>';
+}
