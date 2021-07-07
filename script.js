@@ -43,8 +43,8 @@ while (wY <= 5) {
 console.log('La somma totale è ' + wSum);
 
 var stampa = document.getElementById('snack-1');
-stampa.innerHTML = '<li> La somma totale dei numeri inseriti è ' + sum + '.</li>'
-    + '<li> La somma totale dei numeri inseriti nel ciclo while è ' + wSum + '.</li>';
+stampa.innerHTML = '<li> La somma totale dei numeri inseriti è ' + '<span class="red">' + '"' + sum + '"' + '</span > ' + '.</li>'
+    + '<li> La somma totale dei numeri inseriti nel ciclo while è ' + '<span class="red">' + '"' + wSum + '"' + '</span > ' + '.</li>';
 
 
 /* SNACK 2: Chiedi un numero all'utente, se è pari stampa il numero,
@@ -54,12 +54,13 @@ var userNumber = parseInt(prompt('Digita un numero'));
 
 if ((userNumber % 2) == 0) {//!Se un numero diviso due da resto 0 vuol dire che è pari, perciò scriviamo la condizione cosi.
     stampa = document.getElementById('snack-2');
-    stampa.innerHTML = '<li> Il numero che hai inserito è "' + userNumber + '" ed è pari.</li>';
+    stampa.innerHTML = '<li> Il numero che hai inserito è ' + '<span class="red">'
+        + '"' + userNumber + '"' + '</span > ' + ' ed è pari.</li>';
 } else {
     var userNextNumber = userNumber + 1;
     stampa = document.getElementById('snack-2');
-    stampa.innerHTML = '<li> Il numero che hai inserito è "' + userNumber
-        + '" ed è dispari, perciò è stato portato al numero pari successivo che è: ' + userNextNumber + '.</li>';
+    stampa.innerHTML = '<li> Il numero che hai inserito è ' + '<span class="red">' + '"' + userNumber + '"' + '</span > '
+        + ' ed è dispari, perciò è stato portato al numero pari successivo che è: ' + '<span class="red">' + '"' + userNextNumber + '"' + '</span > ' + '.</li>';
 }
 
 /*  Generatore di “nomi cognomi” casuali: prendendo una lista di nomi e una lista di cognomi,
@@ -80,13 +81,13 @@ for (var q = 0; q < 3; q++) {
     var randoms2 = Math.floor(Math.random() * lastNamesList.length);//!Numero random generato in base alla lunghezza del secondo array
     console.log(randoms2);//!(nel caso non sapessi il numero degli elementi al suo interno).
 
-    gatsbyList += firstNamesList[randoms1] + ' ' + lastNamesList[randoms2] + ';  ';
+    gatsbyList += firstNamesList[randoms1] + ' ' + lastNamesList[randoms2] + '<span class="green">' + ';  ' + '</span>';
 }
 
 console.log(gatsbyList);
 
 stampa = document.getElementById('snack-3');
-stampa.innerHTML = '<li> I 3 nomi della lista sono: ' + gatsbyList + '</li>';
+stampa.innerHTML = '<li> I 3 nomi della lista sono: ' + '<span class="red">' + gatsbyList + '</span >' + '</li>';
 
 /* Crea due array che hanno un numero di elementi diversi.
 Aggiungi elementi casuali all’array che ha meno elementi,

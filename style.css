@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000;
+}
+
+body ul{
+    font-size: 25px;
+    margin: 60px 25vw;
+    color: #01e004;
+}
+
+.green{
+    color: #01e004;
+}
+
+.red{
+    color: #ff0000;
+}
