@@ -103,13 +103,14 @@ stampa = document.getElementById('snack-4-start');
 stampa.innerHTML = '<li> Le tue liste iniziali erano: </li>'
     + '<li>' + firstList + '</li>' + '<li>' + secondList + '</li>';
 
+//!Dichiaro prima le variabili .lenght fuori dal ciclo
 var lenght1 = firstList.length;
 console.log(lenght1);
 
 var lenght2 = secondList.length;
 console.log(secondList);
 
-while (lenght1 !== lenght2) {
+while (lenght1 !== lenght2) {//!Il ciclo procede finchè le due lunghezze non sono uguali.
     var rand = Math.floor(Math.random() * 100) + 1;
 
     if (lenght1 < lenght2) {
@@ -118,7 +119,7 @@ while (lenght1 !== lenght2) {
     } else {
         secondList.push(rand);
     }
-
+    //!I lenght vanno messi anche dentro il ciclo, perchè altrimenti non si aggiorneranno mai.
     lenght1 = firstList.length;
     console.log();
 
