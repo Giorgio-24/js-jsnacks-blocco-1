@@ -136,3 +136,70 @@ stampa.innerHTML = '<li> Le tue liste di adesso hanno un numero uguale di elemen
 
 
 console.log(secondList);
+
+/* SNACK: /
+1. Creare un oggetto palla che abbia le seguenti proprietà.
+  Nome = palla
+  Peso = 10
+2. stampare la palla in pagina*
+3. Attraverso un prompt dare la possibilità all’utente di modificare il peso
+della palla., poi stampare la palla con il peso modificato
+BONUS: stampare la palla tramite una funzione */
+
+var printBall = document.getElementById('print-ball');
+
+var printNow = document.getElementById('print-now');
+
+var getDataValue;
+
+var ball = { name: "ball", weight: 10 };
+
+printNow.addEventListener('click', function () {
+    printObject(ball, printBall)
+});
+
+function printObject(object, getBall) {
+    content = '';
+
+    for (var key in object) {
+        content += key + ': ' + object[key] + '. <br>'
+    }
+
+    getDataValue = document.getElementById('give-me-weight').value;
+    console.log(getDataValue);
+
+    ball['weight'] = getDataValue;//^RICHIAMO L'OGGETTO PESO DELLA PALLA E LO SOVRASCRIVO.
+
+    getBall.innerHTML = content;
+};
+
+console.log(ball);
+
+/* SNACK: Creiamo un array di oggetti contenente 3 squadre di calcio con proprietà "nome", "città" "punti";
+Stampiamo le squadre in pagina, all'interno di una tabella HTML */
+
+var getTable = document.getElementById('teams-table');
+
+var footballTeams = [
+    { name: 'Livorno', city: 'Livorno', score: 10 },
+    { name: 'Pisa', city: 'Pisa', score: 0 },
+    { name: 'Napoli', city: 'Napoli', score: 2 },
+];
+
+footballTeams.sort(function (a, b) {//^LE METTE IN ORDINE DI PUNTEGGIO.
+    return b.score - a.score;//?
+});
+
+tableContent = '';
+
+for (var i = 0; i < footballTeams.length; i++) {
+
+    var currentTeam = footballTeams[i];
+    tableContent += '<tr>';
+    tableContent += '<td>' + currentTeam.name; + '</td>';
+    tableContent += '<td>' + currentTeam.city; + '</td>';
+    tableContent += '<td>' + currentTeam.score; + '</td>';
+    tableContent += '</tr>';
+};
+
+getTable.innerHTML = tableContent;
